@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <Fang />
+    <Topbar />
+    <Editor />
+    <Preview />
   </div>
 </template>
 
 <script>
 //局部组件
-import Fang from './components/Fang'
+import Topbar from './components/Topbar'
+import Editor from './components/Editor'
+import Preview from './components/Preview'
 export default {
   components:{
-    "Fang":Fang,
+    Topbar,Editor,Preview
   }
 }
 </script>
@@ -20,8 +23,5 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
