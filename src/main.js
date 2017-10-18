@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import './assets/reset.scss'
+import 'normalize.css'
 
 Vue.config.productionTip = false
 /*全局组件
