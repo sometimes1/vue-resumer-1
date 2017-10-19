@@ -1,6 +1,6 @@
 <template>
   <div id="app" v-bind:class="{previewMode}">
-    <Topbar class="topbar" v-on:preview="preview"/>
+    <Topbar class="topbar" v-on:preview="preview" />
     <main>
       <Editor v-bind:resume="resume" class="editor" />
       <Preview v-bind:resume="resume" class="preview" />
@@ -37,10 +37,10 @@ export default {
                 {name:'',content:''}
             ],
             wards:[
-                {name:'',content:''}
+                {name:''}
             ],
             contacts:[{
-                qq:'',wechat:'',email:'',phone:''
+                qq:'',email:'',phone:''
             }]
         }
       }
@@ -81,25 +81,31 @@ body,
   z-index: 1;
   box-shadow: 0 0 3px hsla(0, 0, 0, .5);
 }
-#editPreview{
-  display:none;
+
+#editPreview {
+  display: none;
 }
-.previewMode > #topbar {
-  display:none;
+
+.previewMode>#topbar {
+  display: none;
 }
-.previewMode  #editor {
-  display:none;
+
+.previewMode #editor {
+  display: none;
 }
-.previewMode  #preview {
+
+.previewMode #preview {
   max-width: 800px;
-  margin:32px auto;
+  margin: 32px auto;
 }
-.previewMode #editPreview{
-  display:inline-block;
+
+.previewMode #editPreview {
+  display: inline-block;
   position: fixed;
-  right:16px;
-  bottom:16px;
+  right: 16px;
+  bottom: 16px;
 }
+
 .icon {
   width: 1em;
   height: 1em;
@@ -112,16 +118,17 @@ main {
   display: flex;
   flex: 1;
   background: #ddd;
+  padding: 0 200px;
   >.editor {
     width: 40em;
     margin: 16px 8px 16px 16px;
     background: white;
     box-shadow: 0 0 3px hsla(0, 0, 0, .5);
     border-radius: 4px;
-    overflow:hidden;
+    overflow: hidden;
   }
   >.preview {
-    flex: 1;
+    width:800px;
     margin: 16px 8px 16px 16px;
     background: white;
     box-shadow: 0 0 3px hsla(0, 0, 0, .5);

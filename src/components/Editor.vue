@@ -26,16 +26,13 @@
                 <ArrayEditor v-bind:items="resume.projects" v-bind:labels="{name:'项目',content:'项目内容'}" title="项目经历" />
             </li>
             <li v-bind:class="{active: currentTab === 4}">
-                <ArrayEditor v-bind:items="resume.wards" v-bind:labels="{name:'奖励详情',content:'奖励详情'}"  title="获得奖励" />
+                <ArrayEditor v-bind:items="resume.wards" v-bind:labels="{name:'奖励详情'}"  title="获得奖励" />
             </li>
             <li v-bind:class="{active: currentTab === 5}">
                 <h2>联系方式</h2>
                 <el-form>
                     <el-form-item label="QQ">
                         <el-input v-model="resume.contacts.qq"></el-input>
-                    </el-form-item>
-                    <el-form-item label="微信">
-                        <el-input v-model="resume.contacts.wechat"></el-input>
                     </el-form-item>
                     <el-form-item label="邮箱">
                         <el-input v-model="resume.contacts.email"></el-input>
@@ -87,6 +84,7 @@ export default {
         padding: 16px 0;
         text-align: center;
         border: 1px solid white;
+        padding:20px 0;
         >.icon {
             width: 24px;
             height: 24px;

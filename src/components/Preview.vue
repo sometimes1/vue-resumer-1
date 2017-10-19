@@ -1,51 +1,51 @@
 <template>
     <div id="preview">
-        <h1>{{resume.profile.name || '请填写姓名'}}</h1>
-        <p>{{resume.profile.city || '请填写城市'}} | {{resume.profile.birth || '请填写出生年月'}}</p>
-        <hr>
-        <section v-if="filter(resume.workHistory).length > 0">
-            <h2>工作经历</h2>
-            <ul>
-                <li v-for="work in filter(resume.workHistory)">
-                    {{work.company}} {{work.content}}
-                </li>
-            </ul>
-        </section>
-        <hr>
-        <section v-if="filter(resume.studyHistory).length > 0">
-            <h2>学习经历</h2>
-            <ul>
-                <li v-for="study in filter(resume.studyHistory)">
-                    {{study.school}} {{study.duration}} {{study.degree}}
-                </li>
-            </ul>
-        </section>
-        <hr>
-        <section v-if="filter(resume.projects).length > 0">
-            <h2>项目经历</h2>
-            <ul>
-                <li v-for="project in filter(resume.projects)">
-                    {{project.name}} {{project.content}}
-                </li>
-            </ul>
-        </section>
-        <hr>
-        <section v-if="filter(resume.wards).length > 0">
-            <h2>获得奖励</h2>
-            <ul>
-                <li v-for="wards in filter(resume.wards)">
-                    {{wards.name}} {{wards.content}}
-                </li>
-            </ul>
-        </section>
-        <hr>
-        <section v-if="filter(resume.contacts).length > 0">
-            <h2>联系方式</h2>
-            <p>{{resume.contacts.qq || '请填写QQ'}}</p>
-            <p>{{resume.contacts.wechat || '请填写微信'}}</p>
-            <p>{{resume.contacts.email || '请填写邮箱'}}</p>
-            <p>{{resume.contacts.phone || '请填写手机'}}</p>
-        </section>
+        <h1>{{resume.profile.name}}</h1>
+        <p>{{resume.profile.city}}</p>
+        <p>{{resume.profile.birth}}</p>
+            <section v-if="filter(resume.workHistory).length > 0">
+                <h2>工作经历</h2>
+                <ul>
+                    <li v-for="work in filter(resume.workHistory)">
+                        <p>公司：<span>{{work.company}}</span></p>
+                        <p>工作内容：<span>{{work.content}}</span></p>
+                    </li>
+                </ul>
+            </section>
+            <section v-if="filter(resume.studyHistory).length > 0">
+                <h2>学习经历</h2>
+                <ul>
+                    <li v-for="study in filter(resume.studyHistory)">
+                        <p>学校：<span>{{study.school}}</span></p>
+                        <p>时间：<span>{{study.duration}}</span></p>
+                        <p>学位：<span>{{study.degree}}</span></p>
+                    </li>
+                </ul>
+            </section>
+            <section v-if="filter(resume.projects).length > 0">
+                <h2>项目经历</h2>
+                <ul>
+                    <li v-for="project in filter(resume.projects)">
+                        <p>项目：<span>{{project.name}}</span></p>
+                        <p>项目内容：<span>{{project.content}}</span></p>
+                    </li>
+                </ul>
+            </section>
+            
+            <section v-if="filter(resume.wards).length > 0">
+                <h2>荣获奖励</h2>
+                <ul>
+                    <li v-for="wards in filter(resume.wards)">
+                        <p>奖励详情：<span>{{wards.name}}</span></p>
+                    </li>
+                </ul>
+            </section>
+            <section id="contact">
+                <p>{{resume.contacts.qq}}</p>
+                <p>{{resume.contacts.email}}</p>
+                <p>{{resume.contacts.phone}}</p>
+            </section>
+
     </div>
 </template>
 
@@ -71,6 +71,41 @@ export default {
 }
 </script>
 
-<style>
-#preview {}
+<style lang="scss">
+#preview {
+    padding:30px 40px;
+    position: relative;
+    >h1{
+        margin-bottom:20px;
+    }
+    >p {
+        font-size: 16px;
+        font-family: bold;
+        line-height: 20px;
+    }
+    >#contact{
+        position: absolute;
+        top:30px;
+        right: 0;
+        >p{
+            width:200px;
+        }
+    }
+        >section{
+            >h2 {
+            margin: 20px 0;
+            }
+             p{
+                font-size:16px;
+                line-height: 25px;
+                >span{
+                    font-weight:lighter;
+                }
+            }
+            li{
+                border-bottom:1px solid #c9c9c9;
+                margin-bottom:10px;
+            }
+        }
+}
 </style>
