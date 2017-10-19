@@ -11,8 +11,8 @@
         </nav>
         <ol class="panes">
             <!--<li v-for="i in [0,1,2,3,4,5]"  v-bind:class="{active: currentTab === i}">
-                        Tab {{i+1}}
-                        </li>-->
+                            Tab {{i+1}}
+                            </li>-->
             <li v-bind:class="{active: currentTab === 0}">
                 <ProfileEditor v-bind:profile="resume.profile" />
             </li>
@@ -26,7 +26,7 @@
                 <ArrayEditor v-bind:items="resume.projects" v-bind:labels="{name:'项目',content:'项目内容'}" title="项目经历" />
             </li>
             <li v-bind:class="{active: currentTab === 4}">
-                <ArrayEditor v-bind:items="resume.wards" v-bind:labels="{name:'奖励详情'}"  title="获得奖励" />
+                <ArrayEditor v-bind:items="resume.wards" v-bind:labels="{name:'奖励详情'}" title="获得奖励" />
             </li>
             <li v-bind:class="{active: currentTab === 5}">
                 <h2>联系方式</h2>
@@ -34,11 +34,11 @@
                     <el-form-item label="QQ">
                         <el-input v-model="resume.contacts.qq"></el-input>
                     </el-form-item>
-                    <el-form-item label="邮箱">
-                        <el-input v-model="resume.contacts.email"></el-input>
-                    </el-form-item>
                     <el-form-item label="手机">
                         <el-input v-model="resume.contacts.phone"></el-input>
+                    </el-form-item>
+                    <el-form-item label="邮箱">
+                        <el-input v-model="resume.contacts.email"></el-input>
                     </el-form-item>
                 </el-form>
             </li>
@@ -84,7 +84,7 @@ export default {
         padding: 16px 0;
         text-align: center;
         border: 1px solid white;
-        padding:20px 0;
+        padding: 20px 0;
         >.icon {
             width: 24px;
             height: 24px;

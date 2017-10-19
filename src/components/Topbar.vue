@@ -1,7 +1,7 @@
 <template>
   <div id="topbar">
       <div class="logo">
-          VueResumer
+          Resumer
       </div>
       <div class="actions">
           <el-button type="primary">注册</el-button>

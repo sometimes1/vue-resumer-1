@@ -42,8 +42,8 @@
             </section>
             <section id="contact">
                 <p>{{resume.contacts.qq}}</p>
-                <p>{{resume.contacts.email}}</p>
                 <p>{{resume.contacts.phone}}</p>
+                <p>{{resume.contacts.email}}</p>
             </section>
 
     </div>
@@ -85,7 +85,7 @@ export default {
     }
     >#contact{
         position: absolute;
-        top:30px;
+        top:50px;
         right: 0;
         >p{
             width:200px;
